@@ -7,6 +7,12 @@ var app = angular.module('myApp');
 
 app.controller('mainCtrl', function($scope) {
   console.log('hello!');
+
+  $scope.submit = (data) => {
+    console.log('submit!!!', data);
+  }
+
+
   $scope.names = ['dude', 'bob', 'dudebob'];
   $scope.tacos = [
     {
@@ -25,4 +31,17 @@ app.controller('mainCtrl', function($scope) {
       spicy: true
     }
   ];
+
+
+  $scope.fields = [
+  {
+    label: 'Price',
+    model: 'flavor',
+    type: 'text',
+    required: false
+  }
+
+  ]
 });
+
+

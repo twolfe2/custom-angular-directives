@@ -1,0 +1,11 @@
+<h1>Custom Form</h1>
+<pre>{{formData | json}}</pre>
+<form ng-submit="onSubmit(formData)">
+  <div class="form-group" ng-repeat="field in fields">
+  <label class='control-label'>{{field.label}}</label>
+  <input type="{{field.type}}" ng-required='{{field.required}}' ng-model='formData["{{field.model}}"]'>
+    
+  </div>
+  
+  <button>Submit</button>
+</form>

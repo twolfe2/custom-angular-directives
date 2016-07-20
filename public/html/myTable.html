@@ -2,11 +2,12 @@
     <table class="table">
         <thead>
             <tr>
-                <th ng-repeat='key in keys'><a href='#' ng-click='orderSet(key)'>{{key}}</a></th>
+                <th ng-repeat='key in keys'><a href='#' ng-click='orderSet(key)'>{{key | titlecase}}</a>
+                <span ng-if='key === orderByField && !reverseSort'>▲</span><span ng-if='key === orderByField && reverseSort'>▼</span></th>
             </tr>
         </thead>
         <tr ng-repeat="elem in data | orderBy:orderByField:reverseSort">
-            <td ng-repeat='key in keys'>{{elem[key]}}</td>
+            <td ng-repeat='key in keys' my-draggable>{{elem[key]}}</td>
         </tr>
     </table>
     
