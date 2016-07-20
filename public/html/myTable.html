@@ -1,0 +1,13 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th ng-repeat='key in keys'><a href='#' ng-click='orderSet(key)'>{{key}}</a></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="elem in data | orderBy:orderByField:reverseSort">
+            <td ng-repeat='key in keys'>{{elem[key]}}</td>
+        </tr>
+    </table>
+    
+</div>
